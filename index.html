@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>Rishu's Top 5</header>
+    <br>
+   <br> 
+   <br>
+   <br> 
+    <div class="Instructions">
+        <span>Click the buttons on your keyboard to play! Enjoy</span>
+    </div>
+    <br>
+   <br> 
+   <br>
+   <br> 
+   <br>
+   <br> 
+<div class="Keys">
+    <div data-key="65" class="key"><kbd>A</kbd>
+        <span class="sound">Momzu</span>
+    </div>
+    <div data-key="83" class="key"><kbd>S</kbd>
+        <span class="sound">Domru</span>
+    </div>
+    <div data-key="68" class="key"><kbd>D</kbd>
+        <span class="sound">Aditi</span>   
+    </div>
+    <!-- <div data-key="70" class="key"><kbd>F</kbd>
+        <span class="sound">Domru</span>
+    </div>
+    <div data-key="71" class="key"><kbd>G</kbd>
+        <span class="sound">Pa</span>    
+    </div>
+    <div data-key="72" class="key"><kbd>H</kbd>
+        <span class="sound">Dha</span>
+    </div>
+    <div data-key="74" class="key"><kbd>J</kbd>
+        <span class="sound">Ni</span>
+    </div> -->
+
+</div>
+    <audio data-key="65" src="/media/WhatsApp Ptt 2021-01-20 at 8.57.32 PM.ogg"></audio>
+    <audio data-key="83" src="/media/WhatsApp Ptt 2021-01-20 at 8.50.57 PM.ogg"></audio>
+    <audio data-key="68" src="/media/WhatsApp Ptt 2021-01-20 at 8.51.26 PM.ogg"></audio>
+    <!-- <audio data-key="70" src=""></audio>
+    <audio data-key="71" src=""></audio>
+    <audio data-key="72" src=""></audio>
+    <audio data-key="74" src=""></audio> -->
+
+    <script>
+
+        function playSound(e) {
+            const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+            const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+            if (!audio) return;
+            audio.currentTime = 0;
+            audio.play();
+            key.classList.add('playing');
+        }
+
+        function removeTransition(e) {
+            if(e.propertyName !== 'transform') return;
+            this.classList.remove('playing');
+        }
+
+        const keys = document.querySelectorAll('.key');
+        keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+
+        window.addEventListener('keydown', playSound);          
+
+</script> 
+</body>
+</html>

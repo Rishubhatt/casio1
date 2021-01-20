@@ -1,0 +1,74 @@
+*{
+    margin: 0rem;
+    padding: 0rem;
+    box-sizing: border-box;
+}
+
+body{
+    background: url('/media/pexels-sebastian-ervi-1763075.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    text-align: center;
+    
+}
+
+header{
+    color: white;
+    font-family: 'Yusei Magic', sans-serif;
+    font-size: 2rem;
+    font-weight: bolder;    
+    text-shadow: -4px -1px 4px rgba(255, 133, 131, 1);
+  
+
+}
+
+header:hover{
+  
+    transform: scale(1.2);
+    transition: all 1.5s 0.05s; 
+    cursor: pointer;
+}
+
+.Instructions{
+    font-style: italic;
+    font-family: cursive;
+    font-size: 0.75rem;
+    font-weight: lighter;
+    color: rgb(5, 0, 1);
+
+}
+
+.key{
+    display: inline-block;
+    border: solid;
+    border-width: 4px;
+    padding: 20px;
+    opacity: 1;       
+    height: 100px;
+    width: 90px;
+    border-color: rgb(61, 33, 13);
+    align-items: center;
+    font-size: 1.5rem;
+    margin: 15px;
+    
+}
+
+.sound{
+    height: 50px;
+    width: 60px;
+    text-align: left;
+    font-size: 1rem;
+    color: rgb(117, 40, 40);
+
+}
+
+.playing{    
+    box-shadow: 0px 0px 5px 5px rgba(248, 73, 19, 0.75);
+    -webkit-box-shadow: 0px 0px 5px 5px rgba(196, 24, 12, 0.75);
+    -moz-box-shadow: 0px 0px 5px 5px rgba(215,229,25,0.75);
+    transform: scale(1.1);
+    transition: all 1s 0.07s;
+
+
+
+}
